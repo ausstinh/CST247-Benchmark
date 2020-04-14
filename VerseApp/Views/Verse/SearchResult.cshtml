@@ -1,0 +1,62 @@
+﻿@model VerseApp.Models.VerseModel
+@{
+    ViewBag.Title = "Search Result";
+}
+
+<div>
+    <h4>Result:</h4>
+    <hr />
+    @if (Model.Testament != "" && Model.Book != "" && Model.Chapter != "" && Model.Verse != "") {
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Testament)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Testament)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chapter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Verse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Verse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+    </dl>
+    }
+    else
+    {
+        <h3> No Verse Found!</h3>
+       <a href="javascript:history.back()" >try again! </a>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
